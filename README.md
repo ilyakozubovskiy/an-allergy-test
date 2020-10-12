@@ -8,4 +8,5 @@ Implement a method, that determines on base on the allergy test score for the gi
 - tomatoes (16)
 - chocolate (32)
 - pollen (64)
-- cats (128)
+- cats (128)     
+**Note**: a given score may include allergens not listed above (i.e. allergens that score 256, 512, 1024, etc.). Your method should ignore those components of the score. For example, if the allergy score is `257`, your program should only report the `eggs` (1) allergy.
