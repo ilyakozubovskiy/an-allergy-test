@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace AllergyScore
 {
@@ -7,8 +7,6 @@ namespace AllergyScore
     /// </summary>
     public class Allergies
     {
-        private readonly int score;
-
         /// <summary>
         /// Initializes the allergies object on base of test score.
         /// </summary>
