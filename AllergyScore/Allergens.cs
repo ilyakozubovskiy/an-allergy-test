@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace AllergyScore
 {
@@ -12,6 +12,6 @@ namespace AllergyScore
         Tomatoes = 16,
         Chocolate = 32,
         Pollen = 64,
-        Cats = 128
+        Cats = 128,
     }
 }
