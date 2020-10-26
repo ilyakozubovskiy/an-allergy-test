@@ -9,4 +9,5 @@ Implement a [IsAllergicTo](AllergyScore/Allergies.cs#L27) method that determines
 - chocolate (with value `32`)
 - pollen (with value `64`)
 - cats (with value `128`)     
-**Note**: a given score may include allergens not listed above (i.e. allergens that score `256`, `512`, `1024`, etc.). Your method should ignore those components of the score. For example, if the allergy score is `257`, your program should only report the `eggs` (with value 1) allergy. The task definition is given in the XML-comments for the method. _Don't use LINQ._
+**Note**: a given score may include allergens not listed above (i.e. allergens that score `256`, `512`, `1024`, etc.). Your method should ignore those components of the score. For example, if the allergy score is `257`, your program should only report the `eggs` (with value 1) allergy. The task definition is given in the XML-comments for the method.    
+_Don't use LINQ._
