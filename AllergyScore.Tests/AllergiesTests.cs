@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using NUnit.Framework;
 
 #pragma warning disable CA1707
@@ -72,7 +72,7 @@ namespace AllergyScore.Tests
         public void AllergensList_ScoreIs2_ReturnsOnlyPeanuts()
         {
             var sut = new Allergies(2);
-            var expected = new[] {Allergens.Peanuts};
+            var expected = new[] { Allergens.Peanuts };
             Assert.AreEqual(expected, sut.AllergensList());
         }
 
@@ -80,7 +80,7 @@ namespace AllergyScore.Tests
         public void AllergensList_ScoreIs8_ReturnsOnlyStrawberries()
         {
             var sut = new Allergies(8);
-            var expected = new[] {Allergens.Strawberries};
+            var expected = new[] { Allergens.Strawberries };
             Assert.AreEqual(expected, sut.AllergensList());
         }
 
@@ -88,7 +88,7 @@ namespace AllergyScore.Tests
         public void AllergensList_ScoreIs3_ReturnsEggsAndPeanuts()
         {
             var sut = new Allergies(3);
-            var expected = new[] {Allergens.Eggs, Allergens.Peanuts};
+            var expected = new[] { Allergens.Eggs, Allergens.Peanuts };
             Assert.AreEqual(expected, sut.AllergensList());
         }
 
@@ -98,7 +98,7 @@ namespace AllergyScore.Tests
             var sut = new Allergies(248);
             var expected = new[]
             {
-                Allergens.Strawberries, Allergens.Tomatoes, Allergens.Chocolate, Allergens.Pollen, Allergens.Cats
+                Allergens.Strawberries, Allergens.Tomatoes, Allergens.Chocolate, Allergens.Pollen, Allergens.Cats,
             };
             Assert.AreEqual(expected, sut.AllergensList());
         }
@@ -110,7 +110,7 @@ namespace AllergyScore.Tests
             var expected = new[]
             {
                 Allergens.Eggs, Allergens.Peanuts, Allergens.Shellfish, Allergens.Strawberries, Allergens.Tomatoes,
-                Allergens.Chocolate, Allergens.Pollen, Allergens.Cats
+                Allergens.Chocolate, Allergens.Pollen, Allergens.Cats,
             };
             Assert.AreEqual(expected, sut.AllergensList());
         }
@@ -130,7 +130,7 @@ namespace AllergyScore.Tests
         public void AllergensList_ScoreIs259_IgnoreNonAllergenScore()
         {
             var sut = new Allergies(259);
-            var expected = new[] {Allergens.Eggs, Allergens.Peanuts};
+            var expected = new[] { Allergens.Eggs, Allergens.Peanuts };
             Assert.AreEqual(expected, sut.AllergensList());
         }
 
@@ -141,11 +141,11 @@ namespace AllergyScore.Tests
             var expected = new[]
             {
                 Allergens.Eggs, Allergens.Shellfish, Allergens.Strawberries, Allergens.Tomatoes,
-                Allergens.Chocolate, Allergens.Pollen, Allergens.Cats
+                Allergens.Chocolate, Allergens.Pollen, Allergens.Cats,
             };
             Assert.AreEqual(expected, sut.AllergensList());
         }
-        
+
         [TestCase(-100)]
         [TestCase(-4)]
         public void AllergiesCtor_ScoreIsNegative_ThrowArgumentException(int score)
