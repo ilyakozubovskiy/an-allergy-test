@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AllergyScore
 {
@@ -7,6 +8,8 @@ namespace AllergyScore
     /// </summary>
     public class Allergies
     {
+        private readonly int testScore;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Allergies"/> class with test score.
         /// </summary>
@@ -14,8 +17,12 @@ namespace AllergyScore
         /// <exception cref="ArgumentException">Thrown when score is less than zero.</exception>
         public Allergies(int score)
         {
-            // TODO Implement this constructor.
-            throw new NotImplementedException();
+            if (score < 0)
+            {
+                throw new ArgumentException($"Size of matrix '{score}' cannot be less than zero.");
+            }
+
+            this.testScore = score;
         }
 
         /// <summary>
@@ -25,8 +32,16 @@ namespace AllergyScore
         /// <returns>true if there is an allergy to this allergen, false otherwise.</returns>
         public bool IsAllergicTo(Allergens allergens)
         {
-            // TODO Implement this method.
-            throw new NotImplementedException();
+            Allergens[] personAllergens = this.AllergensList();
+            for (int i = 0; i < personAllergens.Length; i++)
+            {
+                if (allergens.HasFlag(personAllergens[i]))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -35,8 +50,16 @@ namespace AllergyScore
         /// <returns>Full list of allergies of the person with given allergy test score.</returns>
         public Allergens[] AllergensList()
         {
-            // TODO Implement this method.
-            throw new NotImplementedException();
+            List<Allergens> personAllergens = new List<Allergens>();
+            for (int i = 1; i <= 128; i *= 2)
+            {
+                if (((Allergens)this.testScore).HasFlag((Allergens)i))
+                {
+                    personAllergens.Add((Allergens)i);
+                }
+            }
+
+            return personAllergens.ToArray();
         }
     }
 }
